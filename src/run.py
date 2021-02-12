@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from observations import perform_observation
+# from observations import perform_observation
 from flask_cors import CORS
 from datetime import date
 

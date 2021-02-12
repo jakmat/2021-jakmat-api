@@ -1,23 +1,23 @@
-from classes.celestial import Celestial
-from classes.location import Location
-from classes.date_time import DateTime
-
-def debug(i):
-    print('----------------------')
-    print('\n\n\n\n\n\n\n\n\n\n\n')
-    print(i)
-    print('\n\n\n\n\n\n\n\n\n\n\n')
-    print('----------------------')
-
-def perform_observation(object, timestamp):
-    lon = '52 N'
-    lat = '19 E'
-    # for observable in observables:
-    celestial = Celestial(object)
-    place = Location(lon, lat)
-    time = DateTime(timestamp)
-    observation = celestial.get_observation(place, time)
-    return observation
+# from classes.celestial import Celestial
+# from classes.location import Location
+# from classes.date_time import DateTime
+#
+# def debug(i):
+#     print('----------------------')
+#     print('\n\n\n\n\n\n\n\n\n\n\n')
+#     print(i)
+#     print('\n\n\n\n\n\n\n\n\n\n\n')
+#     print('----------------------')
+#
+# def perform_observation(object, timestamp):
+#     lon = '52 N'
+#     lat = '19 E'
+#     # for observable in observables:
+#     celestial = Celestial(object)
+#     place = Location(lon, lat)
+#     time = DateTime(timestamp)
+#     observation = celestial.get_observation(place, time)
+#     return observation
 
 # perform_observation('venus')
 # r = perform_observation('venus')
