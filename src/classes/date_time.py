@@ -4,7 +4,7 @@ from datetime import datetime
 
 class DateTime:
     def __init__(self, js_timestamp):
-        self.timestamp = datetime.fromtimestamp(js_timestamp)
+        self.timestamp = datetime.fromtimestamp(int(js_timestamp))
         self.set_time()
 
     def set_time(self):

@@ -9,7 +9,6 @@ class Celestial:
 
     def set_object(self):
         planets = load('de421.bsp')
-        print(planets)
         self.object = planets[self.name]
 
     def observe(self, location, time):
@@ -20,22 +19,18 @@ class Celestial:
         alt, az, distance = astrometric.altaz()
         tm = time.local_dt
         observation = Template(
-            'Obserwuję ${obj_name} w miejscu ${loc_lon}/{loc_lat} o czasie $tm: * Azymut: ${az} | * Wysokość: ${alt}').substitute(
+            'Observing ${obj_name} for location ${loc_lon}/{loc_lat} at time $tm: * azimuth: ${az} | * altitude: ${alt}').substitute(
             obj_name=obj_name, loc_lon=loc_lon, loc_lat=loc_lat, tm=tm, az=az, alt=alt)
-        print(observation)
 
     def get_observation(self, location, time):
         astrometric = location.position.at(time.astrometric_dt).observe(self.object).apparent()
         obj_name = self.caption
-        loc_name = location.name
         alt, az, distance = astrometric.altaz()
         tm = time.local_dt
-
         observation = {
             'objective': obj_name,
             'azimuth': az.degrees,
             'altitude': alt.degrees,
-            'place': loc_name,
             'time': tm.strftime("%d.%m.%Y, %H:%M")
         }
         return observation
