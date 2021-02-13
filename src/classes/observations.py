@@ -1,13 +1,13 @@
-# from classes.celestial import Celestial
-# from classes.location import Location
-# from classes.date_time import DateTime
+from classes.celestial import Celestial
+from classes.location import Location
+from classes.date_time import DateTime
 
 def perform_observation(object, timestamp, longitude, latitude):
     # for observable in observables:
-    # celestial = Celestial(object)
-    # place = Location(longitude, latitude)
-    # time = DateTime(timestamp)
-    # observation = celestial.get_observation(place, time)
+    celestial = Celestial(object)
+    place = Location(longitude, latitude)
+    time = DateTime(timestamp)
+    obj = celestial.get_observation(place, time)
     observation = {
         'object': object,
         'timestamp': timestamp,
