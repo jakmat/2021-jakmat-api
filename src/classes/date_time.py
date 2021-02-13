@@ -1,4 +1,4 @@
-from skyfield.api import load
+from skyfield import api
 from pytz import timezone
 from datetime import datetime
 
@@ -8,7 +8,7 @@ class DateTime:
         self.set_time()
 
     def set_time(self):
-        timescale = load.timescale()
+        timescale = api.load.timescale()
         central = timezone('Europe/Warsaw')
         d = self.timestamp
         c = central.localize(d)

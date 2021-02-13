@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from observations import perform_observation
+from classes.observations import perform_observation
 #from flask_cors import CORS
 
 app = Flask(__name__)

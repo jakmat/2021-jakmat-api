@@ -1,5 +1,5 @@
 from string import Template
-from skyfield.api import load
+from skyfield import api
 
 class Celestial:
     def __init__(self, name):
@@ -8,7 +8,7 @@ class Celestial:
         self.set_object()
 
     def set_object(self):
-        planets = load('de421.bsp')
+        planets = api.load('de421.bsp')
         self.object = planets[self.name]
 
     def observe(self, location, time):
