@@ -8,5 +8,6 @@ class Location:
 
     def set_position(self):
        planets = api.load('de421.bsp')
+       print(planets['JUPITER BARYCENTER'])
        earth = planets['earth']
        self.position = earth + api.Topos(self.longitude, self.latitude)

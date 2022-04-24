@@ -8,11 +8,4 @@ def perform_observation(object, timestamp, longitude, latitude):
     place = Location(longitude, latitude)
     time = DateTime(timestamp)
     efemeride = celestial.get_observation(place, time)
-    observation = {
-        'efemeride': efemeride,
-        'object': object,
-        'timestamp': timestamp,
-        'latitude': latitude,
-        'longitude': longitude
-    }
-    return observation
+    return efemeride

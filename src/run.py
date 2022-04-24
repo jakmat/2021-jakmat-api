@@ -11,14 +11,18 @@ def test_api():
 
 @app.route('/observation')
 def planets_all():
-    object = request.args.get('object')
+    objects = request.args.get('objects')
+    object_names = objects.split(",")
     timestamp = request.args.get('time')
     latitude = request.args.get('lat')
     longitude = request.args.get('lon')
-    observable = perform_observation(object, timestamp, longitude, latitude)
-    observation = jsonify(observable)
-    return observation
-# test: http://172.17.0.2:5000/observation?object=venus&time=1650716590&lat=52&lon=19
+    observables = []
+    for object in object_names:
+        observable = perform_observation(object, timestamp, longitude, latitude)
+        observables.append(observable)
+    observations = jsonify(observables)
+    return observations
+# test: http://172.17.0.2:5000/observation?objects=sun,mercury,venus,moon,mars,jupiter_barycenter,saturn_barycenter,uranus_barycenter,neptune_barycenter,pluto_barycenter&time=1650773000&lat=52n&lon=19e
 
 if __name__ == "__main__":
     app.run()
