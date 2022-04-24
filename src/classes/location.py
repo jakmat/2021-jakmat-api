@@ -1,4 +1,4 @@
-#from skyfield import api
+from skyfield import api
 
 class Location:
     def __init__(self, latitude, longitude):
@@ -7,7 +7,6 @@ class Location:
         self.set_position()
 
     def set_position(self):
-        planets = None
- #       planets = api.load('de421.bsp')
- #       earth = planets['earth']
- #       self.position = earth + api.Topos(self.longitude, self.latitude)
+       planets = api.load('de421.bsp')
+       earth = planets['earth']
+       self.position = earth + api.Topos(self.longitude, self.latitude)

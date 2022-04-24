@@ -18,6 +18,7 @@ def planets_all():
     observable = perform_observation(object, timestamp, longitude, latitude)
     observation = jsonify(observable)
     return observation
+# test: http://172.17.0.2:5000/observation?object=venus&time=1650716590&lat=52&lon=19
 
 if __name__ == "__main__":
     app.run()

@@ -1,5 +1,5 @@
 from string import Template
-#from skyfield.api import load
+from skyfield.api import load
 
 class Celestial:
     def __init__(self, name):
@@ -8,9 +8,8 @@ class Celestial:
         self.set_object()
 
     def set_object(self):
-        planets = None
-  #      planets = load('de421.bsp')
- #       self.object = planets[self.name]
+       planets = load('de421.bsp')
+       self.object = planets[self.name]
 
     def observe(self, location, time):
         astrometric = location.position.at(time.astrometric_dt).observe(self.object).apparent()
@@ -24,15 +23,14 @@ class Celestial:
             obj_name=obj_name, loc_lon=loc_lon, loc_lat=loc_lat, tm=tm, az=az, alt=alt)
 
     def get_observation(self, location, time):
-        # astrometric = location.position.at(time.astrometric_dt).observe(self.object).apparent()
+        astrometric = location.position.at(time.astrometric_dt).observe(self.object).apparent()
         obj_name = self.caption
-        # alt, az, distance = astrometric.altaz()
-        # tm = time.local_dt
-        # observation = {
-        #     'objective': obj_name,
-        #     'azimuth': az.degrees,
-        #     'altitude': alt.degrees,
-        #     'time': tm.strftime("%d.%m.%Y, %H:%M")
-        # }
-        observation = None
+        alt, az, distance = astrometric.altaz()
+        tm = time.local_dt
+        observation = {
+            'objective': obj_name,
+            'azimuth': az.degrees,
+            'altitude': alt.degrees,
+            'time': tm.strftime("%d.%m.%Y, %H:%M")
+        }
         return observation

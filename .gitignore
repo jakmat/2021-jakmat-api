@@ -132,3 +132,5 @@ dmypy.json
 deploy.sh
 develop.sh
 httpd.conf
+
+.idea/
