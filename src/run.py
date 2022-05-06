@@ -1,13 +1,19 @@
 from flask import Flask, jsonify, request
 from classes.observations import perform_observation
-#from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 # CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/test": { "origins": "http://localhost:3000" }})
+
 
 @app.route('/test')
+@cross_origin(origin='localhost', headers=['Content-Type', 'Authorization'])
 def test_api():
-    return jsonify(data="This is a test")
+    response = jsonify(data="This is a test")
+    # response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route('/observation')
 def planets_all():
