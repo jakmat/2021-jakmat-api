@@ -6,12 +6,12 @@ app = Flask(__name__)
 # CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app, resources={r"/test": { "origins": "http://localhost:3000" }})
-
+# cors = CORS(app, resources={r"/test": { "origins": "http://172.19.0.3:3000" }})
 
 @app.route('/test')
 @cross_origin(origin='localhost', headers=['Content-Type', 'Authorization'])
 def test_api():
-    response = jsonify(data="This is a test")
+    response = jsonify(data="This is a test...")
     # response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
