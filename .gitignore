@@ -129,8 +129,6 @@ dmypy.json
 .pyre/
 
 #custom
-deploy.sh
-develop.sh
 httpd.conf
 
 .idea/
