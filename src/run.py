@@ -31,4 +31,4 @@ def planets_all():
 # test: http://172.17.0.2:5000/observation?objects=sun,mercury,venus,moon,mars,jupiter_barycenter,saturn_barycenter,uranus_barycenter,neptune_barycenter,pluto_barycenter&time=1650773000&lat=52n&lon=19e
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
