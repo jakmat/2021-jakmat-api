@@ -1,1 +1,1 @@
-scp -r root@185.201.115.103:/etc/nginx/nginx.conf ./conf
+scp -r root@185.201.115.103:/etc/nginx/sites-available/default ./proxy/nginx/sites-available
