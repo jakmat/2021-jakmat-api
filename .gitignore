@@ -132,3 +132,5 @@ dmypy.json
 httpd.conf
 
 .idea/
+
+*/README.local.md
