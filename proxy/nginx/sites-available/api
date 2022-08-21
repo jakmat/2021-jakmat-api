@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name 185.201.115.103;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/var/www/api/api.sock;
+    }
+}
