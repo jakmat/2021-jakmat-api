@@ -1,0 +1,1 @@
+scp ../proxy/nginx/sites-available/* root@185.201.115.103:/etc/nginx/sites-available

@@ -1,0 +1,8 @@
+server {
+    listen 80;
+    server_name 185.201.115.103;
+
+    location /fastapi {
+        proxy_pass http://unix:/var/www/fastapi/gunicorn.sock;
+    }
+}
