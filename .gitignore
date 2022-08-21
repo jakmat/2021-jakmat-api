@@ -133,4 +133,5 @@ httpd.conf
 
 .idea/
 
-*/README.local.md
+*.local.md
+*.local.sh
