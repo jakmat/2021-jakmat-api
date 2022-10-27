@@ -1,4 +1,32 @@
 server {
     listen 80;
-    server_name 127.0.0.1;
+    listen [::]:80;
+    server_name 185.201.115.103;
+
+    location /node {
+        #works w/o docker:#####proxy_pass http://localhost:3000/;
+        proxy_pass http://localhost:3000/;
+    }
+
+    location /jakmat-api {
+        #works:#####proxy_pass http://localhost/jakmat-api/;
+        proxy_pass http://localhost:5000/;
+    }
+
+    ### these does not work:
+
+    location /data {
+        root /var/www/html/test;
+    }
+
+    location /test {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        include proxy_params;
+        proxy_pass http://unix:/var/www/html/test/index.nginx-debian.html;
+    }
+
+    location /ip {
+        proxy_pass http://127.0.0.1:8000;
+    }
 }
