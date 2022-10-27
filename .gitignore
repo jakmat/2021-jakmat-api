@@ -136,7 +136,7 @@ httpd.conf
 *.local.md
 *.local.sh
 
-/scripts
-/proxy
-/nodejs
-/vps
+scripts
+proxy
+nodejs
+vps
