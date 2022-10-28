@@ -8,12 +8,13 @@ server {
         proxy_pass http://localhost:3000/;
     }
 
-    location /jakmat-api {
-        #works:#####proxy_pass http://localhost/jakmat-api/;
-        proxy_pass http://localhost:5000/;
-    }
+#    location /jakmat-api {
+#        #works:#####proxy_pass http://localhost/jakmat-api/;
+#        proxy_pass http://localhost:5000/;
+#    }
 
-    location /jakmat-fastapi {
+    location /jakmat-api {
+        #proxy_pass http://localhost/jakmat-api/;
         proxy_pass http://localhost:5050/;
     }
 
