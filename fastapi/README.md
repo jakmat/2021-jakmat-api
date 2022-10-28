@@ -1,2 +1,4 @@
-Use: python3.9 venv
-Reference: https://www.vultr.com/docs/how-to-deploy-fastapi-applications-with-gunicorn-and-nginx-on-ubuntu-20-04/
+```
+docker build -t jakmat-api .
+docker run -d --rm -p 5050:5050 --name jakmat-api jakmat-api
+```
