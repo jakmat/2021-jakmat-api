@@ -1,0 +1,14 @@
+fastapi>=0.68.0,<0.69.0
+pydantic>=1.8.0,<2.0.0
+uvicorn>=0.15.0,<0.16.0
+
+certifi==2020.6.20
+DateTime==4.3
+jplephem==2.14
+numpy==1.19.0
+pytz==2020.1
+sgp4==2.12
+six==1.15.0
+skyfield==1.34
+waitress==1.4.4
+zope.interface==5.1.0

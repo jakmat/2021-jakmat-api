@@ -132,3 +132,17 @@ dmypy.json
 httpd.conf
 
 .idea/
+
+*.local.md
+*.local.sh
+
+scripts/
+proxy/
+nodejs/
+vps/
+proxy/nginx/nginx.conf
+proxy/nginx/sites-available/default
+scripts/nginx.conf.fetch.sh
+scripts/sites-available.deploy.sh
+fastapi/deploy.sh
+
