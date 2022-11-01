@@ -3,20 +3,20 @@ server {
     listen [::]:80;
     server_name 185.201.115.103;
 
-    location /node {
-        #works w/o docker:#####proxy_pass http://localhost:3000/;
-        proxy_pass http://localhost:3000/;
+    location /api {
+        #proxy_pass http://localhost/jakmat-api/;
+        proxy_pass http://localhost:5050/;
     }
 
+#    location /node {
+#        #works w/o docker:#####proxy_pass http://localhost:3000/;
+#        proxy_pass http://localhost:3000/;
+#    }
+#
 #    location /jakmat-api {
 #        #works:#####proxy_pass http://localhost/jakmat-api/;
 #        proxy_pass http://localhost:5000/;
 #    }
-
-    location /jakmat-api {
-        #proxy_pass http://localhost/jakmat-api/;
-        proxy_pass http://localhost:5050/;
-    }
 
     ### these does not work:
 

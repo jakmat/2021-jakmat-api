@@ -1,7 +1,8 @@
-class Observation:
-    def __init(self, name, azimuth, altitude, place, time):
-        self.name = name
-        self.azimuth = azimuth
-        self.altitude = altitude
-        self.place = place
-        self.time = time
+from pydantic import BaseModel
+
+class Observation(BaseModel):
+    name: str
+    azimuth: int
+    altitude: int
+    place: str
+    time: str
